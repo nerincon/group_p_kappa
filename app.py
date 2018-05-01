@@ -72,9 +72,9 @@ class RegisterHandler(LoginHandler):
     page = page + '.html'
     self.render_template(page, {})
 
-  def post(self):
-    username = self.get_query_argument('username', None)
-    role = self.get_query_argument('role', None)
+  def post(self, err):
+    username = self.get_body_argument('username', None)
+    role = self.get_body_argument('role', None)
     conn = psycopg2.connect("dbname=Kappa user=postgres")
     cur = conn.cursor()
     cur.execute("SELECT username, password FROM users WHERE username = %s", [username])
@@ -83,9 +83,10 @@ class RegisterHandler(LoginHandler):
       error_msg = u"?error=" + tornado.escape.url_escape("Login name already taken")
       self.redirect(u"/login" + error_msg)
     else:
-      password = self.get_query_argument("password", None)
-      hashed_pass = bcrypt.hashpw(password, bcrypt.gensalt(10))
-      cur.execute("INSERT INTO users VALUES (%s, %s, %s)",(username, password, role))
+      password = self.get_body_argument("password", None)
+      hashed_pass = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt(8))
+      # bcrypt.checkpw(password.encode('utf-8'), hashed_password.encode('utf-8'))
+      cur.execute("INSERT INTO users VALUES (DEFAULT,%s, %s, %s)",(username, hashed_pass, role))
       conn.commit()
       success_msg = u"?success=" + tornado.escape.url_escape("Registered User Successfully")
       self.redirect(u"/register" + success_msg)
