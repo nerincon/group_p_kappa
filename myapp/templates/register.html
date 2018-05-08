@@ -9,6 +9,7 @@
     <title>Internal Kappa Register</title>
 </head>
 <body>
+    {%if current_user %}
     <div class="row">
         <h1>Kappa</h1>
         <h1>Internal Register Form</h1>
@@ -36,5 +37,13 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
     crossorigin="anonymous">
     </script>
+    {%else%}
+    <script>
+    function redirect() {
+       // setTimeout(function () { window.location.href = "/login"; }, 1000);
+    }
+    redirect();
+    </script>
+    {%endif%}
 </body>
 </html>

@@ -11,6 +11,12 @@ tornado = "*"
 "jinja2" = "*"
 bcrypt = "*"
 "psycopg2" = "*"
+ipython = "*"
+pylint = "*"
+"boto3" = "*"
+queries = "*"
+requests = "*"
+"markdown2" = "*"
 
 
 [dev-packages]
@@ -20,3 +26,4 @@ bcrypt = "*"
 [requires]
 
 python_version = "3.6"
+pylint = "*"

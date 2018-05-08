@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> {% block head %}
+  <title>{% block title %}{% endblock %} -Kappa Insurance </title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/main.css">
+  <link rel="shortcut icon" href="static/img/favicon.ico" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> {% endblock %}
+</head>
+
+<body>
+  <header id="header">{% block header %}
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="form" class="brand-logo">Kappa Insurance</a>
+          <a href="#" data-target="slide-out" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="/index">Main</a>
+            </li>
+            <li>
+              <a href="/form">Add Customer</a>
+            </li>
+            <li>
+              <a href="/customer">view customer</a>
+            </li>
+            <li>
+              <div  class="input-field col s12">
+                <i class="material-icons prefix">search</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input">Search</label>
+              </div>
+            </li>
+          </ul>
+         
+        </div>
+      </nav>
+
+      <ul class="sidenav" id="slide-out">
+        <li>
+          <a href="#">Main</a>
+        </li>
+        <li>
+          <a href="#">Add Customer</a>
+        </li>
+        <li>
+          <a href="#">Companies</a>
+        </li>
+      </ul>
+    </div>
+    {% endblock %}</header>
+  <main id="content">{% block content %}{% endblock %}</main>
+
+
+  {% block footer %}
+
+  <footer class="page-footer hide-on-small-only">
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+     
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<!-- Optional JavaScript -->
+<script type="text/javascript" src="static/js/main.js"></script> {% endblock %}
+</div>
+  </footer>
+
+
+
+
+</body>
+
+</html>
